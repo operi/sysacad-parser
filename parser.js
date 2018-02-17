@@ -6,6 +6,7 @@ var cantidadMateriasFaltantes;
 var numeroHTML;
 var nota;
 var notaTexto;
+// Este número depende de las electivas que se elijan. Pueden ser más.
 var cantidadMateriasTotalesCarreraSistemas = 43;
 var sumaTotal = 0;
 var sumaSinAplazos = 0;
