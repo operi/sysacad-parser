@@ -32,8 +32,8 @@ for ( var i = 1; i < elementos.length; i++ ) {
 
 cantidadMateriasFaltantes = cantidadMateriasTotalesCarreraSistemas - cantidadNotasSinAplazos;
 
-console.log("Promedio con aplazos: " + sumaTotal/cantidadNotasConAplazos);
-console.log("Promedio sin aplazos: " + sumaSinAplazos/cantidadNotasSinAplazos);
+console.log("Promedio con aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
+console.log("Promedio sin aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
 console.log("Cantidad de materias aprobadas: " + cantidadNotasSinAplazos);
 console.log("Cantidad de materias faltantes: " + cantidadMateriasFaltantes);
-console.log("Porcentaje de materias aprobadas: " + cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas);
+console.log("Porcentaje de materias aprobadas: " + (cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%");
