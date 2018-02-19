@@ -117,14 +117,19 @@ for ( var i = 1; i < elementos.length; i++ ) {
 }
 
 cantidadMateriasFaltantes = cantidadMateriasTotalesCarreraSistemas - cantidadNotasSinAplazos;
+console.log("----------------------------------------------------------------")
+console.log("----------------------------------------------------------------")
+console.log("| Promedio Con Aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
+console.log("| Promedio Sin Aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
+console.log("| Cantidad de Materias Aprobadas: " + cantidadNotasSinAplazos);
+console.log("| Cantidad de Materias Faltantes: " + cantidadMateriasFaltantes);
+console.log("| Porcentaje de Materias Aprobadas: " + (cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%");
 
-console.log("Promedio Con Aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
-console.log("Promedio Sin Aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
-console.log("Cantidad de Materias Aprobadas: " + cantidadNotasSinAplazos);
-console.log("Cantidad de Materias Faltantes: " + cantidadMateriasFaltantes);
-console.log("Porcentaje de Materias Aprobadas: " + (cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%");
-
-console.log("Cantidad de Electivas Cursadas: " + cantidadElectivasCursadas);
-console.log("Cantidad de Horas de Electivas: " + cantidadHorasElectivas);
-console.log("Porcentaje del Total de Materias Electivas: " + (cantidadHorasElectivas*100/cantidadHorasElectivasNecesarias).toFixed(2) + "%");
-console.log("Cantidad de Horas de Electivas Faltantes: " + (cantidadHorasElectivasNecesarias - cantidadHorasElectivas));
+console.log("----------------------------------------------------------------")
+console.log("----------------------------------------------------------------")
+console.log("| Cantidad de Electivas Cursadas: " + cantidadElectivasCursadas);
+console.log("| Cantidad de Horas de Electivas: " + cantidadHorasElectivas);
+console.log("| Porcentaje del Total de Materias Electivas: " + (cantidadHorasElectivas*100/cantidadHorasElectivasNecesarias).toFixed(2) + "%");
+console.log("| Cantidad de Horas de Electivas Faltantes: " + (cantidadHorasElectivasNecesarias - cantidadHorasElectivas));
+console.log("----------------------------------------------------------------")
+console.log("----------------------------------------------------------------")
