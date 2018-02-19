@@ -122,7 +122,7 @@ console.log("----------------------------------------------------------------")
 console.log("| Promedio Con Aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
 console.log("| Promedio Sin Aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
 console.log("| Cantidad de Materias Aprobadas: " + cantidadNotasSinAplazos);
-console.log("| Cantidad de Materias Faltantes: " + cantidadMateriasFaltantes);
+console.log("| Cantidad de Materias Faltantes (Aprox.): " + cantidadMateriasFaltantes);
 console.log("| Porcentaje de Materias Aprobadas: " + (cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%");
 
 console.log("----------------------------------------------------------------")
