@@ -6,11 +6,10 @@
 
 ### La forma de uso es: 
 
-```sh
-1 - Abrir el explorador
-2 - Ir a alumnos.frlp.utn.edu.ar
-3 - Ir a la pestaña Examenes
-4 - Abrir la consola del explorador
-5 - Pegar el código
-6 - Darle Enter
-```
+- 1 - Abrir el explorador
+- 2 - Ir a alumnos.frlp.utn.edu.ar
+- 3 - Ir a la pestaña Examenes
+- 4 - Abrir la consola del explorador
+- 5 - Pegar el código
+- 6 - Darle Enter
+
