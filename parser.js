@@ -45,7 +45,7 @@ var electivasObjeto = {
   "Responsabilidad Social Institucional(Elec.)": 2,
   "Emprendedorismo(Elec.)": 2,
   "Sistemas de transmisión inalámbrica(Elec.)": 2,
-  "Actualización Tecnológica e Innovación(Elec.)": 3,
+  "Actualización Tecnológica e Innovación(Elec.)": 2,
   "Auditoría en Sistemas de Información(Elec.)": 2,
   "Bioingeniería(Elec.)": 2,
   "Tecnologías para la Explotación de la Información(Elec.)": 2,
