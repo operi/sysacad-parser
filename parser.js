@@ -13,30 +13,6 @@ var Numeros = {
       "Insc.":0, 
       "Aprob.":0,
 }
-var electivasArray = [
-  "Seguridad en Sistemas de Información(Ele",
-  "Tecnología y Gestión Web(Elec.)",
-  "Comunicación Profesional(Elec.)",
-  "Responsabilidad Social Institucional(El",
-  "Emprendedorismo(Elec.)",
-  "Sistemas de Transmisión Inalámbricos (El",
-  "Actualización Tecnológica e Innovación (",
-  "Auditoría en Sistemas de Información(Ele",
-  "Bioingeniería(Elec.)",
-  "Tecnologías para la Explotación de Infor",
-  "Metodología de la Investigación(Elec.)",
-  "Aplicaciones Móviles(Elec.)",
-  "Metodología Agiles (Elec.)",
-  "Administración de Base de Datos(Elec.)",
-  "Sistemas Operativos Avanzados(Elec.)",
-  "Aplicaciones en Tiempo Real(Elec.)",
-  "Interacción Hombre-Sistemas(Elec.)",
-  "Internetworking(Elec.)",
-  "Modelos de Calidad en la Industria del S",
-  "Protocolos y Seguridad en redes inalámbr",
-  "Tecnología de Información para la Gesti",
-  "Ingeniería en Calidad(Elec.)",
-];
 
 var electivasObjeto = {
   "Seguridad en Sistemas de Información(Ele": 2,
@@ -109,11 +85,11 @@ for ( var i = 1; i < elementos.length; i++ ) {
       // Se corrobora que no cuente una inscripción o una ausencia como una electiva aprobada
       if ( notaTexto !== "Ausen." && notaTexto !== "Insc."){
         // Se controla que la materia obtenida sea una Electiva
-        for(var j=0; j < electivasArray.length; j++){
+        for(var key in electivasObjeto){
             //Sistemas Operativos colisiona con Sistemas Operativos Avanzados
-            if( electivasArray[j].toLowerCase().replace(/ /g,"").indexOf(electivaTexto.toLowerCase().replace(/ /g,"")) !== -1 && electivaTexto !== "Sistemas Operativos"){
+            if( key.toLowerCase().replace(/ /g,"").indexOf(electivaTexto.toLowerCase().replace(/ /g,"")) !== -1 && electivaTexto !== "Sistemas Operativos"){
       
-                horasElectiva = electivasObjeto[electivasArray[j]]; // Se obtienen las horas de la respectiva Electiva
+                horasElectiva = electivasObjeto[key]; // Se obtienen las horas de la respectiva Electiva
                 cantidadHorasElectivas += horasElectiva; // Se suman dichas horas al total
                 cantidadElectivasCursadas += 1; // Se suma una electiva al total de electivas cursadas
             }
