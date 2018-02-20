@@ -106,14 +106,14 @@ for ( var i = 1; i < elementos.length; i++ ) {
     numeroHTML = elementos[i].getElementsByTagName("td")[2];
     if ( numeroHTML !== undefined) {
       notaTexto = numeroHTML.innerText;
-      // Se corrobora que no cuente una inscripción o una ausencia como una electiva aprobada 
+      // Se corrobora que no cuente una inscripción o una ausencia como una electiva aprobada
       if ( notaTexto !== "Ausen." && notaTexto !== "Insc."){
         // Se controla que la materia obtenida sea una Electiva
         for(var j=0; j < electivasArray.length; j++){
-
-            if( electivaTexto === electivasArray[j]){
+            //Sistemas Operativos colisiona con Sistemas Operativos Avanzados
+            if( electivasArray[j].toLowerCase().replace(/ /g,"").indexOf(electivaTexto.toLowerCase().replace(/ /g,"")) !== -1 && electivaTexto !== "Sistemas Operativos"){
       
-                horasElectiva = electivasObjeto[electivaTexto]; // Se obtienen las horas de la respectiva Electiva
+                horasElectiva = electivasObjeto[electivasArray[j]]; // Se obtienen las horas de la respectiva Electiva
                 cantidadHorasElectivas += horasElectiva; // Se suman dichas horas al total
                 cantidadElectivasCursadas += 1; // Se suma una electiva al total de electivas cursadas
             }
