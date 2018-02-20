@@ -103,14 +103,21 @@ for ( var i = 1; i < elementos.length; i++ ) {
     // Se convierte a texto el nombre de la materia
     electivaTexto = electivaHTML.innerText;
 
-    // Se controla que la materia obtenida sea una Electiva
-    for(var j=0; j < electivasArray.length; j++){
+    numeroHTML = elementos[i].getElementsByTagName("td")[2];
+    if ( numeroHTML !== undefined) {
+      notaTexto = numeroHTML.innerText;
+      // Se corrobora que no cuente una inscripción o una ausencia como una electiva aprobada 
+      if ( notaTexto !== "Ausen." && notaTexto !== "Insc."){
+        // Se controla que la materia obtenida sea una Electiva
+        for(var j=0; j < electivasArray.length; j++){
 
-      if( electivaTexto === electivasArray[j]){
+            if( electivaTexto === electivasArray[j]){
       
-        horasElectiva = electivasObjeto[electivaTexto]; // Se obtienen las horas de la respectiva Electiva
-        cantidadHorasElectivas += horasElectiva; // Se suman dichas horas al total
-        cantidadElectivasCursadas += 1; // Se suma una electiva al total de electivas cursadas
+                horasElectiva = electivasObjeto[electivaTexto]; // Se obtienen las horas de la respectiva Electiva
+                cantidadHorasElectivas += horasElectiva; // Se suman dichas horas al total
+                cantidadElectivasCursadas += 1; // Se suma una electiva al total de electivas cursadas
+            }
+        }
       }
     }
   }
