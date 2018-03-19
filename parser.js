@@ -110,8 +110,17 @@ if ( numeroHTML !== undefined) {
 cantidadMateriasFaltantes = cantidadMateriasTotalesCarreraSistemas - cantidadNotasSinAplazos - cantidadMateriasEquivalencias;
 cantidadMateriasAprobadas = cantidadNotasSinAplazos + cantidadMateriasEquivalencias;
 
-console.log("----------------------------------------------------------------")
-console.log("----------------------------------------------------------------")
+console.log("________________________________________________________________")
+console.log("________________________________________________________________")
+console.log("_______$$$_____$$$_____$$$$$$$$$$$$$$$_____$$$$_______$$$_______");
+console.log("_______$$$_____$$$___________$$$___________$$$$$______$$$_______") 
+console.log("_______$$$_____$$$___________$$$___________$$$_$$$____$$$_______") 
+console.log("_______$$$_____$$$___________$$$___________$$$__$$$___$$$_______") 
+console.log("_______$$$_____$$$___________$$$___________$$$___$$$__$$$_______") 
+console.log("_______$$$_____$$$___________$$$___________$$$____$$$_$$$_______") 
+console.log("_______$$$$$$$$$$$___________$$$___________$$$______$$$$$_______") 
+console.log("________________________________________________________________")
+console.log("________________________________________________________________")
 console.log("| Cantidad de Materias del Plan: " + cantidadMateriasTotalesCarreraSistemas + " (Aprox.)");
 console.log("| Promedio Con Aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
 console.log("| Promedio Sin Aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
