@@ -8,8 +8,9 @@
 
 - 1 - Abrir su explorador de preferencia (Google Chrome, Mozilla Firefox, etc.)
 - 2 - Ir a alumnos.frlp.utn.edu.ar
-- 3 - Ir a la pestaña Examenes
-- 4 - Abrir la consola del explorador
-- 5 - Pegar el código
-- 6 - Darle Enter
+- 3 - Loggearse
+- 4 - Ir a la pestaña Examenes
+- 5 - Abrir la consola del explorador
+- 6 - Pegar el código
+- 7 - Darle Enter
 
