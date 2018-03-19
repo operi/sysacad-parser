@@ -44,8 +44,8 @@ var cantidadMateriasAprobadas;
 var numeroHTML;
 var nota;
 var notaTexto;
-// Este número depende de las electivasObjeto que se elijan. Pueden ser más.
-var cantidadMateriasTotalesCarreraSistemas = 43;
+// Este número depende de las electivasObjeto que se elijan. Como mínimo serían 42 y como máximo 46. Se elige 44 como promedio.
+var cantidadMateriasTotalesCarreraSistemas = 44;
 var sumaTotal = 0;
 var sumaSinAplazos = 0;
 var cantidadNotasConAplazos = 0;
