@@ -6,7 +6,7 @@
 
 ### La forma de uso es: 
 
-- 1 - Abrir el explorador
+- 1 - Abrir su explorador de preferencia (Google Chrome, Mozilla Firefox, etc.)
 - 2 - Ir a alumnos.frlp.utn.edu.ar
 - 3 - Ir a la pestaña Examenes
 - 4 - Abrir la consola del explorador
