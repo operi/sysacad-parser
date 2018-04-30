@@ -1,0 +1,13 @@
+{
+  "name": "Sysacad Parser",
+  "version": "1.0",
+  "description": "Agrega información útil a Sysacad",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["http://alumnos.frlp.utn.edu.ar/examenes.asp*", "https://alumnos.frlp.utn.edu.ar/examenes.asp*"],
+      "js": ["parser.js"]
+    }
+  ],
+  "manifest_version": 2
+}

@@ -1,16 +1,16 @@
 var Numeros = {
-      "uno" : 1, 
-      "dos": 2, 
-      "tres": 3, 
-      "cuatro": 4, 
-      "cinco":5, 
-      "seis":6, 
-      "siete":7, 
-      "ocho":8, 
-      "nueve":9, 
-      "diez":10, 
-      "Ausen.":0, 
-      "Insc.":0, 
+      "uno" : 1,
+      "dos": 2,
+      "tres": 3,
+      "cuatro": 4,
+      "cinco":5,
+      "seis":6,
+      "siete":7,
+      "ocho":8,
+      "nueve":9,
+      "diez":10,
+      "Ausen.":0,
+      "Insc.":0,
       "Aprob.":0,
 }
 
@@ -86,13 +86,12 @@ for ( var i = 1; i < elementos.length; i++ ) {
       if ( notaTexto !== "Ausen." && notaTexto !== "Insc."){
         // Se controla que la materia obtenida sea una Electiva
         for(var key in electivasObjeto){
-            //Sistemas Operativos colisiona con Sistemas Operativos Avanzados
-            if( key.toLowerCase().replace(/ /g,"").indexOf(electivaTexto.toLowerCase().replace(/ /g,"")) !== -1 && electivaTexto !== "Sistemas Operativos"){
-      
-                horasElectiva = electivasObjeto[key]; // Se obtienen las horas de la respectiva Electiva
-                cantidadHorasElectivas += horasElectiva; // Se suman dichas horas al total
-                cantidadElectivasCursadas += 1; // Se suma una electiva al total de electivas cursadas
-            }
+          //Sistemas Operativos colisiona con Sistemas Operativos Avanzados
+          if( key.toLowerCase().replace(/ /g,"").indexOf(electivaTexto.toLowerCase().replace(/ /g,"")) !== -1 && electivaTexto !== "Sistemas Operativos"){
+            horasElectiva = electivasObjeto[key]; // Se obtienen las horas de la respectiva Electiva
+            cantidadHorasElectivas += horasElectiva; // Se suman dichas horas al total
+            cantidadElectivasCursadas += 1; // Se suma una electiva al total de electivas cursadas
+          }
         }
       }
     }
@@ -116,3 +115,73 @@ console.log("| Porcentaje del Total de Materias Electivas: " + (cantidadHorasEle
 console.log("| Cantidad de Horas de Electivas Faltantes: " + (cantidadHorasElectivasNecesarias - cantidadHorasElectivas));
 console.log("----------------------------------------------------------------")
 console.log("----------------------------------------------------------------")
+
+var tablaPrincipal = document.getElementsByTagName("table")[1];
+var tablaPromedios = document.createElement("table");
+
+//promedio con aplazos
+var promedioConAplazosRow = tablaPromedios.insertRow(0);
+var promedioConAplazosNombre = promedioConAplazosRow.insertCell(0);
+var promedioConAplazosValor = promedioConAplazosRow.insertCell(1);
+
+promedioConAplazosNombre.innerHTML = "Promedio Con Aplazos";
+promedioConAplazosValor.innerHTML = (sumaTotal/cantidadNotasConAplazos).toFixed(2);
+// promedio sin aplazos
+var promedioSinAplazosRow = tablaPromedios.insertRow(1);
+var promedioSinAplazosNombre = promedioSinAplazosRow.insertCell(0);
+var promedioSinAplazosValor = promedioSinAplazosRow.insertCell(1);
+
+promedioSinAplazosNombre.innerHTML = "Promedio Sin Aplazos";
+promedioSinAplazosValor.innerHTML = (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2);
+// cantidad de materias aprobadas
+var cantidadMateriasAprobadasRow = tablaPromedios.insertRow(2);
+var cantidadMateriasAprobadasNombre = cantidadMateriasAprobadasRow.insertCell(0);
+var cantidadMateriasAprobadasValor = cantidadMateriasAprobadasRow.insertCell(1);
+
+cantidadMateriasAprobadasNombre.innerHTML = "Cantidad de Materias Aprobadas";
+cantidadMateriasAprobadasValor.innerHTML = cantidadNotasSinAplazos;
+// cantidad de materias faltantes (aprox)
+var cantidadMateriasFaltantesRow = tablaPromedios.insertRow(3);
+var cantidadMateriasFaltantesNombre = cantidadMateriasFaltantesRow.insertCell(0);
+var cantidadMateriasFaltantesValor = cantidadMateriasFaltantesRow.insertCell(1);
+
+cantidadMateriasFaltantesNombre.innerHTML = "Cantidad de Materias Faltantes (Aprox)";
+cantidadMateriasFaltantesValor.innerHTML = cantidadMateriasFaltantes;
+// porcentaje de materias aprobadas
+var porcentajeMateriasAprobadasRow = tablaPromedios.insertRow(4);
+var porcentajeMateriasAprobadasNombre = porcentajeMateriasAprobadasRow.insertCell(0);
+var porcentajeMateriasAprobadasValor = porcentajeMateriasAprobadasRow.insertCell(1);
+
+porcentajeMateriasAprobadasNombre.innerHTML = "Porcentaje de Materias Aprobadas";
+porcentajeMateriasAprobadasValor.innerHTML = (cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%";
+// cantidad de electivas cursadas
+var cantidadElectivasCursadasRow = tablaPromedios.insertRow(5);
+var cantidadElectivasCursadasNombre = cantidadElectivasCursadasRow.insertCell(0);
+var cantidadElectivasCursadasValor = cantidadElectivasCursadasRow.insertCell(1);
+
+cantidadElectivasCursadasNombre.innerHTML = "Cantidad de Electivas Cursadas";
+cantidadElectivasCursadasValor.innerHTML = cantidadElectivasCursadas;
+// cantidad de horas de electivas
+var cantidadHorasElectivasRow = tablaPromedios.insertRow(6);
+var cantidadHorasElectivasNombre = cantidadHorasElectivasRow.insertCell(0);
+var cantidadHorasElectivasValor = cantidadHorasElectivasRow.insertCell(1);
+
+cantidadHorasElectivasNombre.innerHTML = "Cantidad de Horas de Electivas";
+cantidadHorasElectivasValor.innerHTML = cantidadHorasElectivas;
+// porcentaje del total de materias electivas
+var porcentajeDelTotalDeMateriasElectivasRow = tablaPromedios.insertRow(7);
+var porcentajeDelTotalDeMateriasElectivasNombre = porcentajeDelTotalDeMateriasElectivasRow.insertCell(0);
+var porcentajeDelTotalDeMateriasElectivasValor = porcentajeDelTotalDeMateriasElectivasRow.insertCell(1);
+
+porcentajeDelTotalDeMateriasElectivasNombre.innerHTML = "Porcentaje del Total de Materias Electivas";
+porcentajeDelTotalDeMateriasElectivasValor.innerHTML = (cantidadHorasElectivas*100/cantidadHorasElectivasNecesarias).toFixed(2) + "%";
+// cantidad de horas de electivas faltantes
+var cantidadHorasElectivasFaltantesRow = tablaPromedios.insertRow(8);
+var cantidadHorasElectivasFaltantesNombre = cantidadHorasElectivasFaltantesRow.insertCell(0);
+var cantidadHorasElectivasFaltantesValor = cantidadHorasElectivasFaltantesRow.insertCell(1);
+
+cantidadHorasElectivasFaltantesNombre.innerHTML = "Cantidad de Horas de Electivas Faltantes";
+cantidadHorasElectivasFaltantesValor.innerHTML = (cantidadHorasElectivasNecesarias - cantidadHorasElectivas);
+
+tablaPromedios.style.border = 'solid 1px black';
+tablaPrincipal.append(tablaPromedios);
