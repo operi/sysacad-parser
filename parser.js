@@ -135,6 +135,7 @@ console.log("| Cantidad de Horas de Electivas: " + cantidadHorasElectivas);
 console.log("| Cantidad de Horas de Electivas Faltantes: " + (cantidadHorasElectivasNecesarias - cantidadHorasElectivas));
 console.log("| Porcentaje del Total de Materias Electivas: " + (cantidadHorasElectivas*100/cantidadHorasElectivasNecesarias).toFixed(2) + "%");
 console.log("----------------------------------------------------------------")
+<<<<<<< HEAD
 console.log("----------------------------------------------------------------")
 
 var tablaPrincipal = document.getElementsByTagName("table")[1];
