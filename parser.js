@@ -38,24 +38,23 @@ var electivasObjeto = {
 "Tecnología de Información para la Gesti": 2,
 "Ingeniería en Calidad(Elec.)": 3,
 }
+// Este número depende de las electivasObjeto que se elijan. Como mínimo serían 42 y como máximo 46. Se elige 44 como promedio.
+var CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS = 44;
+var CANTIDAD_HORAS_ELECTIVAS_NECESARIAS = 22;
 
 var cantidadMateriasFaltantes;
 var cantidadMateriasAprobadas;
 var numeroHTML;
 var nota;
 var notaTexto;
-// Este número depende de las electivasObjeto que se elijan. Como mínimo serían 42 y como máximo 46. Se elige 44 como promedio.
-var cantidadMateriasTotalesCarreraSistemas = 44;
 var sumaTotal = 0;
 var sumaSinAplazos = 0;
 var cantidadNotasConAplazos = 0;
 var cantidadNotasSinAplazos = 0;
-
 var electivaHTML;
 var electivaTexto;
 var cantidadElectivasCursadas = 0;
 var cantidadHorasElectivas = 0;
-var cantidadHorasElectivasNecesarias = 22;
 
 var cantidadMateriasEquivalencias = 0;
 
@@ -106,7 +105,7 @@ if ( numeroHTML !== undefined) {
 }
 }
 
-cantidadMateriasFaltantes = cantidadMateriasTotalesCarreraSistemas - cantidadNotasSinAplazos - cantidadMateriasEquivalencias;
+cantidadMateriasFaltantes = CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS - cantidadNotasSinAplazos - cantidadMateriasEquivalencias;
 cantidadMateriasAprobadas = cantidadNotasSinAplazos + cantidadMateriasEquivalencias;
 
 console.log("________________________________________________________________")
@@ -120,22 +119,21 @@ console.log("_______$$$_____$$$___________$$$___________$$$____$$$_$$$_______")
 console.log("_______$$$$$$$$$$$___________$$$___________$$$______$$$$$_______") 
 console.log("________________________________________________________________")
 console.log("________________________________________________________________")
-console.log("| Cantidad de Materias del Plan: " + cantidadMateriasTotalesCarreraSistemas + " (Aprox.)");
+console.log("| Cantidad de Materias del Plan: " + CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS + " (Aprox.)");
 console.log("| Promedio Con Aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
 console.log("| Promedio Sin Aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
 console.log("| Cantidad de Materias Aprobadas: " + cantidadMateriasAprobadas);
 console.log("| Cantidad de Materias Faltantes (Aprox.): " + cantidadMateriasFaltantes);
-console.log("| Porcentaje de Materias Aprobadas: " + (cantidadMateriasAprobadas*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%");
+console.log("| Porcentaje de Materias Aprobadas: " + (cantidadMateriasAprobadas*100/CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS).toFixed(2) + "%");
 
 console.log("----------------------------------------------------------------")
 console.log("----------------------------------------------------------------")
-console.log("| Cantidad de Electivas Necesarias: " + cantidadHorasElectivasNecesarias);
+console.log("| Cantidad de Electivas Necesarias: " + CANTIDAD_HORAS_ELECTIVAS_NECESARIAS);
 console.log("| Cantidad de Electivas Cursadas: " + cantidadElectivasCursadas);
 console.log("| Cantidad de Horas de Electivas: " + cantidadHorasElectivas);
-console.log("| Cantidad de Horas de Electivas Faltantes: " + (cantidadHorasElectivasNecesarias - cantidadHorasElectivas));
-console.log("| Porcentaje del Total de Materias Electivas: " + (cantidadHorasElectivas*100/cantidadHorasElectivasNecesarias).toFixed(2) + "%");
+console.log("| Cantidad de Horas de Electivas Faltantes: " + (CANTIDAD_HORAS_ELECTIVAS_NECESARIAS - cantidadHorasElectivas));
+console.log("| Porcentaje del Total de Materias Electivas: " + (cantidadHorasElectivas*100/CANTIDAD_HORAS_ELECTIVAS_NECESARIAS).toFixed(2) + "%");
 console.log("----------------------------------------------------------------")
-<<<<<<< HEAD
 console.log("----------------------------------------------------------------")
 
 var tablaPrincipal = document.getElementsByTagName("table")[1];
@@ -175,7 +173,7 @@ var porcentajeMateriasAprobadasNombre = porcentajeMateriasAprobadasRow.insertCel
 var porcentajeMateriasAprobadasValor = porcentajeMateriasAprobadasRow.insertCell(1);
 
 porcentajeMateriasAprobadasNombre.innerHTML = "Porcentaje de Materias Aprobadas";
-porcentajeMateriasAprobadasValor.innerHTML = (cantidadNotasSinAplazos*100/cantidadMateriasTotalesCarreraSistemas).toFixed(2) + "%";
+porcentajeMateriasAprobadasValor.innerHTML = (cantidadNotasSinAplazos*100/CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS).toFixed(2) + "%";
 // cantidad de electivas cursadas
 var cantidadElectivasCursadasRow = tablaPromedios.insertRow(5);
 var cantidadElectivasCursadasNombre = cantidadElectivasCursadasRow.insertCell(0);
@@ -196,14 +194,14 @@ var porcentajeDelTotalDeMateriasElectivasNombre = porcentajeDelTotalDeMateriasEl
 var porcentajeDelTotalDeMateriasElectivasValor = porcentajeDelTotalDeMateriasElectivasRow.insertCell(1);
 
 porcentajeDelTotalDeMateriasElectivasNombre.innerHTML = "Porcentaje del Total de Materias Electivas";
-porcentajeDelTotalDeMateriasElectivasValor.innerHTML = (cantidadHorasElectivas*100/cantidadHorasElectivasNecesarias).toFixed(2) + "%";
+porcentajeDelTotalDeMateriasElectivasValor.innerHTML = (cantidadHorasElectivas*100/CANTIDAD_HORAS_ELECTIVAS_NECESARIAS).toFixed(2) + "%";
 // cantidad de horas de electivas faltantes
 var cantidadHorasElectivasFaltantesRow = tablaPromedios.insertRow(8);
 var cantidadHorasElectivasFaltantesNombre = cantidadHorasElectivasFaltantesRow.insertCell(0);
 var cantidadHorasElectivasFaltantesValor = cantidadHorasElectivasFaltantesRow.insertCell(1);
 
 cantidadHorasElectivasFaltantesNombre.innerHTML = "Cantidad de Horas de Electivas Faltantes";
-cantidadHorasElectivasFaltantesValor.innerHTML = (cantidadHorasElectivasNecesarias - cantidadHorasElectivas);
+cantidadHorasElectivasFaltantesValor.innerHTML = (CANTIDAD_HORAS_ELECTIVAS_NECESARIAS - cantidadHorasElectivas);
 
 tablaPromedios.style.border = 'solid 1px black';
 tablaPrincipal.append(tablaPromedios);
