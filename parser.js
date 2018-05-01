@@ -108,17 +108,6 @@ if ( numeroHTML !== undefined) {
 cantidadMateriasFaltantes = CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS - cantidadNotasSinAplazos - cantidadMateriasEquivalencias;
 cantidadMateriasAprobadas = cantidadNotasSinAplazos + cantidadMateriasEquivalencias;
 
-console.log("________________________________________________________________")
-console.log("________________________________________________________________")
-console.log("_______$$$_____$$$_____$$$$$$$$$$$$$$$_____$$$$_______$$$_______");
-console.log("_______$$$_____$$$___________$$$___________$$$$$______$$$_______") 
-console.log("_______$$$_____$$$___________$$$___________$$$_$$$____$$$_______") 
-console.log("_______$$$_____$$$___________$$$___________$$$__$$$___$$$_______") 
-console.log("_______$$$_____$$$___________$$$___________$$$___$$$__$$$_______") 
-console.log("_______$$$_____$$$___________$$$___________$$$____$$$_$$$_______") 
-console.log("_______$$$$$$$$$$$___________$$$___________$$$______$$$$$_______") 
-console.log("________________________________________________________________")
-console.log("________________________________________________________________")
 console.log("| Cantidad de Materias del Plan: " + CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS + " (Aprox.)");
 console.log("| Promedio Con Aplazos: " + (sumaTotal/cantidadNotasConAplazos).toFixed(2));
 console.log("| Promedio Sin Aplazos: " + (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
@@ -126,82 +115,25 @@ console.log("| Cantidad de Materias Aprobadas: " + cantidadMateriasAprobadas);
 console.log("| Cantidad de Materias Faltantes (Aprox.): " + cantidadMateriasFaltantes);
 console.log("| Porcentaje de Materias Aprobadas: " + (cantidadMateriasAprobadas*100/CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS).toFixed(2) + "%");
 
-console.log("----------------------------------------------------------------")
-console.log("----------------------------------------------------------------")
 console.log("| Cantidad de Electivas Necesarias: " + CANTIDAD_HORAS_ELECTIVAS_NECESARIAS);
 console.log("| Cantidad de Electivas Cursadas: " + cantidadElectivasCursadas);
 console.log("| Cantidad de Horas de Electivas: " + cantidadHorasElectivas);
 console.log("| Cantidad de Horas de Electivas Faltantes: " + (CANTIDAD_HORAS_ELECTIVAS_NECESARIAS - cantidadHorasElectivas));
 console.log("| Porcentaje del Total de Materias Electivas: " + (cantidadHorasElectivas*100/CANTIDAD_HORAS_ELECTIVAS_NECESARIAS).toFixed(2) + "%");
-console.log("----------------------------------------------------------------")
-console.log("----------------------------------------------------------------")
 
+var HTML_PROMEDIOS = "<table width=\"100%\" align=\"center\" border=\"1\" cellspacing=\"0\" cellpadding=\"1\" bgcolor=\"#000000\"> <tbody> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Materias del Plan</td> <td>${cantidad-materias-plan}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Promedio Con Aplazos</td> <td>${promedio-con-aplazos}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Promedio Sin Aplazos</td> <td>${promedio-sin-aplazos}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Materias Aprobadas</td> <td>${cantidad-materias-aprobadas}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Materias Faltantes (aprox.)</td> <td>${cantidad-materias-faltantes}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Porcentaje de Materias Aprobadas</td> <td>${porcentaje-materias-aprobadas}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Electivas Necesarias</td> <td>${cantidad-electivas-necesarias}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Electivas Cursadas</td> <td>${cantidad-electivas-cursadas}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Horas de Electivas</td> <td>${cantidad-horas-electivas}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Porcentaje del Total de Materias Electivas</td> <td>${porcentaje-total-materias-electivas}</td> </tr> <tr style=\"border: 1px solid black;\"> <td>Cantidad de Horas de Electivas Faltantes</td> <td>${cantidad-horas-electivas-faltantes}</td> </tr> </tbody> </table>"
 var tablaPrincipal = document.getElementsByTagName("table")[1];
 var tablaPromedios = document.createElement("table");
-
-//promedio con aplazos
-var promedioConAplazosRow = tablaPromedios.insertRow(0);
-var promedioConAplazosNombre = promedioConAplazosRow.insertCell(0);
-var promedioConAplazosValor = promedioConAplazosRow.insertCell(1);
-
-promedioConAplazosNombre.innerHTML = "Promedio Con Aplazos";
-promedioConAplazosValor.innerHTML = (sumaTotal/cantidadNotasConAplazos).toFixed(2);
-// promedio sin aplazos
-var promedioSinAplazosRow = tablaPromedios.insertRow(1);
-var promedioSinAplazosNombre = promedioSinAplazosRow.insertCell(0);
-var promedioSinAplazosValor = promedioSinAplazosRow.insertCell(1);
-
-promedioSinAplazosNombre.innerHTML = "Promedio Sin Aplazos";
-promedioSinAplazosValor.innerHTML = (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2);
-// cantidad de materias aprobadas
-var cantidadMateriasAprobadasRow = tablaPromedios.insertRow(2);
-var cantidadMateriasAprobadasNombre = cantidadMateriasAprobadasRow.insertCell(0);
-var cantidadMateriasAprobadasValor = cantidadMateriasAprobadasRow.insertCell(1);
-
-cantidadMateriasAprobadasNombre.innerHTML = "Cantidad de Materias Aprobadas";
-cantidadMateriasAprobadasValor.innerHTML = cantidadNotasSinAplazos;
-// cantidad de materias faltantes (aprox)
-var cantidadMateriasFaltantesRow = tablaPromedios.insertRow(3);
-var cantidadMateriasFaltantesNombre = cantidadMateriasFaltantesRow.insertCell(0);
-var cantidadMateriasFaltantesValor = cantidadMateriasFaltantesRow.insertCell(1);
-
-cantidadMateriasFaltantesNombre.innerHTML = "Cantidad de Materias Faltantes (Aprox)";
-cantidadMateriasFaltantesValor.innerHTML = cantidadMateriasFaltantes;
-// porcentaje de materias aprobadas
-var porcentajeMateriasAprobadasRow = tablaPromedios.insertRow(4);
-var porcentajeMateriasAprobadasNombre = porcentajeMateriasAprobadasRow.insertCell(0);
-var porcentajeMateriasAprobadasValor = porcentajeMateriasAprobadasRow.insertCell(1);
-
-porcentajeMateriasAprobadasNombre.innerHTML = "Porcentaje de Materias Aprobadas";
-porcentajeMateriasAprobadasValor.innerHTML = (cantidadNotasSinAplazos*100/CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS).toFixed(2) + "%";
-// cantidad de electivas cursadas
-var cantidadElectivasCursadasRow = tablaPromedios.insertRow(5);
-var cantidadElectivasCursadasNombre = cantidadElectivasCursadasRow.insertCell(0);
-var cantidadElectivasCursadasValor = cantidadElectivasCursadasRow.insertCell(1);
-
-cantidadElectivasCursadasNombre.innerHTML = "Cantidad de Electivas Cursadas";
-cantidadElectivasCursadasValor.innerHTML = cantidadElectivasCursadas;
-// cantidad de horas de electivas
-var cantidadHorasElectivasRow = tablaPromedios.insertRow(6);
-var cantidadHorasElectivasNombre = cantidadHorasElectivasRow.insertCell(0);
-var cantidadHorasElectivasValor = cantidadHorasElectivasRow.insertCell(1);
-
-cantidadHorasElectivasNombre.innerHTML = "Cantidad de Horas de Electivas";
-cantidadHorasElectivasValor.innerHTML = cantidadHorasElectivas;
-// porcentaje del total de materias electivas
-var porcentajeDelTotalDeMateriasElectivasRow = tablaPromedios.insertRow(7);
-var porcentajeDelTotalDeMateriasElectivasNombre = porcentajeDelTotalDeMateriasElectivasRow.insertCell(0);
-var porcentajeDelTotalDeMateriasElectivasValor = porcentajeDelTotalDeMateriasElectivasRow.insertCell(1);
-
-porcentajeDelTotalDeMateriasElectivasNombre.innerHTML = "Porcentaje del Total de Materias Electivas";
-porcentajeDelTotalDeMateriasElectivasValor.innerHTML = (cantidadHorasElectivas*100/CANTIDAD_HORAS_ELECTIVAS_NECESARIAS).toFixed(2) + "%";
-// cantidad de horas de electivas faltantes
-var cantidadHorasElectivasFaltantesRow = tablaPromedios.insertRow(8);
-var cantidadHorasElectivasFaltantesNombre = cantidadHorasElectivasFaltantesRow.insertCell(0);
-var cantidadHorasElectivasFaltantesValor = cantidadHorasElectivasFaltantesRow.insertCell(1);
-
-cantidadHorasElectivasFaltantesNombre.innerHTML = "Cantidad de Horas de Electivas Faltantes";
-cantidadHorasElectivasFaltantesValor.innerHTML = (CANTIDAD_HORAS_ELECTIVAS_NECESARIAS - cantidadHorasElectivas);
-
-tablaPromedios.style.border = 'solid 1px black';
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-materias-plan}", CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS + " (Aprox.)");
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${promedio-con-aplazos}", (sumaTotal/cantidadNotasConAplazos).toFixed(2));
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${promedio-sin-aplazos}", (sumaSinAplazos/cantidadNotasSinAplazos).toFixed(2));
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-materias-aprobadas}", cantidadMateriasAprobadas);
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-materias-faltantes}", cantidadMateriasFaltantes);
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${porcentaje-materias-aprobadas}", (cantidadMateriasAprobadas*100/CANTIDAD_MATERIAS_TOTALES_CARRERA_SISTEMAS).toFixed(2) + "%");
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-electivas-necesarias}", CANTIDAD_HORAS_ELECTIVAS_NECESARIAS);
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-electivas-cursadas}", cantidadElectivasCursadas);
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-horas-electivas}", cantidadHorasElectivas);
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${cantidad-horas-electivas-faltantes}", (CANTIDAD_HORAS_ELECTIVAS_NECESARIAS - cantidadHorasElectivas));
+HTML_PROMEDIOS = HTML_PROMEDIOS.replace("${porcentaje-total-materias-electivas}", (CANTIDAD_HORAS_ELECTIVAS_NECESARIAS - cantidadHorasElectivas));
+tablaPromedios.innerHTML = HTML_PROMEDIOS;
 tablaPrincipal.append(tablaPromedios);
