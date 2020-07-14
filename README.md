@@ -1,5 +1,7 @@
 # sysacad-parser
 
-[![N|Solid](http://www.utn.edu.ar/static/images/5727c0aa957c121e00875cd7.jpg)](https://alumnos.frlp.utn.edu.ar/)
+(https://alumnos.frlp.utn.edu.ar/)
 
-## Este código fue hecho para calcular información relevante a la historia académica de un alumno.
+- Extensión de Chrome para agregar estadísticas (tales como promedio, cantidad de materias faltantes, entre otras) al sistema Alumnos Web. Esta extensión ahora está deprecada debido al cambio a SysAcad.
+
+- Chrome extension to add statistics about user's academic history (such as average, passed subjects, and others). This extension is now deprecated because Alumnos Web was deprecated.
